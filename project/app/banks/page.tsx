@@ -66,7 +66,11 @@ export default function Home() {
       <Navbar />
       <div className="flex flex-col items-center">
         <h2 className="text-lg font-semibold mb-2">Scan Your Card</h2>
-        <Webcam ref={webcamRef} screenshotFormat="image/png" className="rounded-lg border border-gray-300 shadow-md" />
+        <Webcam
+          ref={webcamRef}
+          screenshotFormat="image/png"
+          className="w-[300px] h-[200px] rounded-lg border border-gray-100 shadow-md"
+        />
         <button onClick={captureAndProcess} className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700">
           Scan Card
         </button>

@@ -13,7 +13,9 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
+
 } from "@/components/ui/avatar"
+
 
 
 
@@ -38,11 +40,12 @@ export default async function Home() {
     redirect("/signup"); // Redirect on the server side
   } 
 
+
+
 return (
   <div>
     <Navbar />
     <ToastNotification />
-    
   </div>
 );
 

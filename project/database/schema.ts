@@ -16,3 +16,11 @@ export const usersTable = pgTable("users", {
 });
 
 
+export const contractTable = pgTable("contracts", {
+  contractId:varchar({ length: 255 }).notNull(), 
+  buyer:integer(),
+  customer:integer(),
+  details:varchar({ length: 255 }),
+  status:varchar({ length: 255 }),
+}); 
+
