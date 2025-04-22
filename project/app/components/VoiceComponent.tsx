@@ -4,9 +4,10 @@ import React, { useEffect, useState } from "react";
 import { useConversation } from "@11labs/react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mic, MicOff, Volume2, VolumeX, MessageSquare, X, Send } from "lucide-react";
+import { Mic, MicOff, Volume2, VolumeX, MessageSquare, X, Send, MoveRight } from "lucide-react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { toast } from "sonner";
+import { useRouter } from 'next/navigation'
 
 const VoiceChat = () => {
   const [hasPermission, setHasPermission] = useState(false);
@@ -86,7 +87,12 @@ const VoiceChat = () => {
     }
   };
 
+  const router = useRouter()
 
+  const handleClick = () => {
+    localStorage.setItem('transcript', transcript)
+    router.push('/testobject')
+  }
 
   return (
     <div className="w-full h-full p-4">
@@ -134,6 +140,14 @@ const VoiceChat = () => {
             {!hasPermission && (
               <p className="text-yellow-600">Please allow microphone access to use voice chat</p>
             )}
+          </div>
+
+          <div className="flex justify-center">
+            <Button  onClick={handleClick} className="w-full">
+                Next
+                <MoveRight className="mr-2 h-4 w-4" />
+              </Button>
+
           </div>
         </CardContent>
       </Card>

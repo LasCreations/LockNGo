@@ -3,9 +3,11 @@ import { getServerSession } from "next-auth/next";
 import UserCard from "@/app/components/UserCard";
 import { redirect } from "next/navigation"; // Use redirect() for SSR
 import Navbar from "@/app/components/Navbar";
+import User from "@/app/components/User";
 import ToastNotification from "@/app/components/ToastNotification";
 import { drizzle } from 'drizzle-orm/neon-http';
 import { eq } from 'drizzle-orm';
+
 
 import { Button } from "@/components/ui/button"
 import { usersTable } from '@/database/schema';
@@ -45,6 +47,7 @@ export default async function Home() {
 return (
   <div>
     <ToastNotification />
+    <User user={session.user.name} />
   </div>
 );
 

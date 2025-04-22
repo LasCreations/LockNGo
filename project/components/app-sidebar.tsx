@@ -55,8 +55,18 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/dashboard",
       icon: LayoutDashboard,
+      items: [
+        {
+          title: "View",
+          url: "/dashboard",
+        },
+        {
+          title: "Configure",
+          url: "#",
+        },
+      ],
     },
     {
       title: "Transactions",
@@ -66,7 +76,7 @@ const data = {
       items: [
         {
           title: "Create A Transaction",
-          url: "#",
+          url: "/voice3d",
         },
         {
           title: "Join A Transaction",
@@ -74,7 +84,7 @@ const data = {
         },
         {
           title: "View Transactions",
-          url: "#",
+          url: "/viewcontract",
         },
       ],
     },
@@ -89,7 +99,7 @@ const data = {
         },
         {
           title: "View Banks",
-          url: "#",
+          url: "/banks",
         },
       ],
     },
